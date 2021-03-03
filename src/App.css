@@ -1,0 +1,365 @@
+img {
+  width: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+@font-face {
+  font-family: 'FranklinITCStd-Medium';
+  src: url(./fonts/FranklinITCStd-Medium.otf) format('otf');
+}
+
+body {
+  font-family: 'FranklinITCStd-Medium';
+}
+
+hr {
+  border: .1em solid gray;
+}
+
+/*********************** 
+      ALL BAYS
+***********************/
+
+.allBays {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+
+  /*
+  grid-gap: .3em;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+  "bay1 bay2 bay3 bay4 bay5 bay6 bay7 bay8"
+  "bay9 bay10 bay11 bay12 bay13 baycr baycf bayth";
+  */
+}
+
+.singleBay {
+  border: .1px solid gray;
+  padding: .3em;
+  min-width: 9vw;
+  max-width: 9vw;
+  min-height: 40vh;
+  max-height: 40vh;
+  display: inline-block;
+  margin: 5px;
+  overflow: scroll;
+}
+
+.singleBay_header {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  border-bottom: .1px solid gray;
+  align-items: center;
+}
+.singleBay_header a {
+  color: white;
+  display: inline-block;
+  width: 100%;
+  padding-left: 20%;
+}
+.singleBay_header a:hover {
+  color: blue;
+}
+
+
+.singleBay_jobName {
+  padding: .4em .2em;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+.baywatchlogo {
+  width: 160px;
+  padding: .5em;
+}
+
+.qrCode {
+  width: 4em;
+}
+
+/*********************** 
+      BAY NOTES 
+***********************/
+
+body { 
+  background-color: black;
+  color: white;
+  font-family: 'FranklinITCStd-Medium', sans-serif;
+}
+
+.header {
+  display: flex;
+  width: 33%;
+  padding: 0 14%;
+}
+
+.qrCode {
+  width: 4em;
+}
+
+.header_item {
+  font-size: 1em;
+  padding: 1em 1em;
+}
+
+.addItem_Form {
+  display: flex;
+  justify-content: center;
+}
+
+.addItemButton {
+  font-size: 1.2em;
+    padding: .2em .2em;
+    color: white;
+    height: 40px;
+    width: 40px;
+    margin-left: -97px;
+}
+
+.bayItemList {
+  padding: 0;
+  width: 320px;
+  margin: 1em auto;
+}
+
+.bayItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: black;
+  color: black;
+  padding: .4em;
+}
+
+.bayItemsName {
+  text-align: left;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.itemInputDiv {
+  width: 61%;
+}
+
+.itemInput {
+  font-size: 1.2em;
+  padding: .2em .2em;
+  width: 93%;
+  border-radius: 16px;
+}
+
+.formIcons {
+  display: flex;
+  align-items: center;
+  padding-left: 3em;
+}
+
+.plusicon {
+  padding: 0 .3em 0 0;
+}
+
+.timeicon {
+  font-size: 1.6em;
+}
+
+.notStarred {
+  display: none;
+}
+
+.starred {
+  padding: 0 .4em 0 0;
+}
+
+.instructions {
+  padding-bottom: 1.5em;
+}
+
+.itemicon {
+  padding: 0em .2em;
+}
+
+.greenyellow {
+  color: greenyellow;
+}
+
+.received {
+  opacity: 0.5;
+  color: white;
+}
+
+.staricon {
+  color: yellow;
+}
+
+.math {
+  padding: 0 1em;
+}
+
+.add {
+  padding: 0 1em 0 0;
+}
+
+.subtract {
+  padding: 0 0 0;
+}
+
+.suggestedItems {
+  position: absolute;
+    background-color: white;
+    width: 38em;
+    height: 14em;
+    overflow: scroll;
+    padding: 1em .5em;
+    color: black;
+    right: 32em;
+    font-size: 1.2em;
+    top: 3.5em;
+}
+
+.menu {
+  position: absolute;
+  z-index: 99;
+  width: 14%;
+  left: 16px;
+  top: 4.2em;
+  font-size: .9em;
+}
+
+.menuItem {
+  padding: .6em 0;
+}
+
+.suggestionsTitle {
+  padding: 0 0 .5em 0;
+  font-size: 1.2em;
+}
+
+.showMe {
+  background-color: white;
+  height: 10em;
+  width: 10em;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.navIcons {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navIcon_item {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 1em 1em;
+    background: #d93f47;
+    border-radius: 50%;
+    width: 18px;
+    color: white;
+    margin-bottom: .5em;
+}
+
+.information {
+  background-color: #56aee8;
+}
+
+.checklist {
+  background-color: #4d6ad9;
+}
+
+.typeSomething {
+  font-size: 1.5em;
+}
+
+.expendables {
+  background-color: #2fc22e;
+}
+
+/* .teardrop::before {
+  content: '';
+  content:"\A";
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #dd4397 transparent transparent;
+  position: absolute;
+  left: -15px;
+} */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.footer-time {
+  text-align: center;
+  padding: 2em;
+}
+
+@media screen and (max-width: 340px) {
+  .bayItemList {
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: 640px)  {
+  .bayItemsName {
+    font-size: 1.5em;
+  }
+
+  .addItemButton {
+    margin-left: -16%;
+  }
+
+  .display-item {
+    padding: 0 11%;
+  }
+
+  .welcomeItem {
+    text-align: left;
+    font-size: 1.7em;
+  }
+
+  .bayItemList {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .information, .expendables, .addItem {
+    display: none;
+  }
+}
+

@@ -1,0 +1,56 @@
+#!/bin/sh
+
+#_PORT=80
+_PORT=9418
+
+
+# read version number from file 'version'
+_VERSION=$(< version) > /dev/null 2>&1
+if [ -z "${_VERSION}" ]; then
+	_VERSION=1.0
+fi
+
+if [ -z "${NODE_ENV}" ]; then
+	echo "0 - $0"
+	#full_path=$(realpath $0)
+	#dir_path=$(dirname $full_path)
+	dir_path=$(dirname pwd)
+	echo "dir_path - $dir_path"
+	. $dir_path/admin-set-env
+fi
+if [ -z "${NODE_ENV}" ]; then
+	echo ">>> ERROR: NODE_ENV NOT SET"
+	return
+fi
+
+echo ">>> UPDATING $_NODE_ENV TO VERSION $_VERSION"
+
+_IMAGE="baywatch-origin"
+
+_CNAME="baywatch-server-origin"
+
+
+echo ">>> BUILDING DOCKER IMAGE $_IMAGE:$_VERSION"
+
+docker build --tag $_IMAGE:"$_VERSION" -f Dockerfile-origin .
+if [ $? -ne 0 ]; then
+	echo "Error in - docker build"
+	return
+fi
+
+echo ">>> REMOVING EXISTING CONTAINER $_CNAME"
+
+docker container stop $_CNAME
+docker container rm $_CNAME
+
+echo ">>> STARTING $_CNAME ON $_PORT"
+
+_IP=$(ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}')
+
+docker run --add-host=localnode:$_IP -it --name $_CNAME -p $_PORT:80 -d $_IMAGE:"$_VERSION" 
+if [ $? -ne 0 ]; then
+	echo "Error in - docker run"
+else
+	echo "Running on $_PORT"
+fi
+# docker container rm $1

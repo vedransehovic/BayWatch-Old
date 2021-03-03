@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo ">>> UPDATING NODE_ENV"
+
+# from cfg_env file
+_NODE_ENV=$(< cfg_env) > /dev/null 2>&1
+if [ -z "${_NODE_ENV}" ]; then
+	# from current repo name
+	_NODE_ENV=$(pwd | cut -d'-' -f2 | cut -d'.' -f1)
+fi
+
+
+# validate and export
+if [ -z "${_NODE_ENV}" ]; then
+	_NODE_ENV="staging"
+fi
+export NODE_ENV=$_NODE_ENV
+
+echo ">>> $NODE_ENV"

@@ -1,0 +1,70 @@
+#!/bin/sh
+
+_PORT_LIVE=3000
+_PORT_STAGING=5000
+
+
+# read version number from file 'version'
+_VERSION=$(< version) > /dev/null 2>&1
+if [ -z "${_VERSION}" ]; then
+	_VERSION=1.0
+fi
+
+if [ -z "${NODE_ENV}" ]; then
+	echo "0 - $0"
+	#full_path=$(realpath $0)
+	#dir_path=$(dirname $full_path)
+	dir_path=$(dirname pwd)
+	echo "dir_path - $dir_path"
+	. $dir_path/admin-set-env
+fi
+if [ -z "${NODE_ENV}" ]; then
+	echo ">>> ERROR: NODE_ENV NOT SET"
+	return
+fi
+
+echo ">>> UPDATING $_NODE_ENV TO VERSION $_VERSION"
+
+# get port number from command line argument number 1
+if [ -z "${1}" ]
+then
+
+	if [ "$NODE_ENV" = "live" ]
+	then
+
+		# LIVE port
+		_PORT=$_PORT_LIVE
+	else
+		
+		_PORT=$_PORT_STAGING
+	fi
+else
+	_PORT=$1
+fi
+
+_IMAGE="baywatch-image"
+_CNAME="baywatch-server-$NODE_ENV"
+
+
+echo ">>> BUILDING DOCKER IMAGE $_IMAGE:$_VERSION"
+
+docker build --tag $_IMAGE:"$_VERSION" .
+if [ $? -ne 0 ]; then
+	echo "Error in - docker build"
+	return
+fi
+
+echo ">>> REMOVING EXISTING CONTAINER $_CNAME"
+
+docker container stop $_CNAME
+docker container rm $_CNAME
+
+echo ">>> STARTING $_CNAME ON $_PORT"
+
+docker run -it --name $_CNAME -p $_PORT:3000 -d $_IMAGE:"$_VERSION"
+if [ $? -ne 0 ]; then
+	echo "Error in - docker run"
+else
+	echo "Running on $_PORT"
+fi
+# docker container rm $1

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# requires admin-set-env
+# requires admin-hooks-clone
+# requires admin-hooks-update-docker
+echo ">>> post-receive - START"
+echo ">>> working directory = $(pwd)"
+
+_SCRIPTLOC=$(pwd)/hooks
+
+. $_SCRIPTLOC/admin-set-env
+echo ">>> NODE_ENV=$NODE_ENV"
+
+
+echo ">>>> CLONING THE REPO..."
+. $_SCRIPTLOC/admin-hooks-clone
+if [ $? -eq 0 ]; then
+	echo ">>> CLONING - DONE"
+else
+	echo ">>> CLONING - ERROR\n$?"
+fi
+
+echo ">>> UPDATING DOCKER..."
+. $_SCRIPTLOC/admin-hooks-docker
+if [ $? -eq 0 ]; then
+	echo ">>> DOCKER - DONE"
+else
+	echo ">>> DOCKER - ERROR\n$?"
+fi
+
+echo ">>> post-receive - STOP"

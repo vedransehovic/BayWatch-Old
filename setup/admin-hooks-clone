@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Deployment location should be pre-configured by cloning the target repo
+
+_LOCATION=/opt/baywatch-$NODE_ENV
+
+# Go to deployment location
+cd $_LOCATION
+
+pwd
+# git status
+
+unset GIT_DIR
+
+echo "\n>>> CHECKING OUT ..."
+git checkout -f
+
+
+git add -A
+git stash
+
+echo "\n>>> PULLING ..."
+git pull
+#git --git-dir=/home/abel_admin/dev/baywatch.git checkout -f
+#git --git-dir=/home/abel_admin/dev/baywatch.git pull
+#git --work-tree=/home/abel_admin/dev/baywatch_server --git-dir=/home/abel_admin/dev/baywatch.git checkout -f
+#git --work-tree=/home/abel_admin/dev/baywatch_server --git-dir=/home/abel_admin/dev/baywatch.git pull master
+if [ $? -eq 0 ]; then
+	echo "\n>>> EXTRACTED"
+else
+	echo "\n>>> ERROR"
+fi

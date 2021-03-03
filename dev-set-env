@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "staging" > cfg_env
+export NODE_ENV="staging"
+
