@@ -1,27 +1,26 @@
-import firebase from 'firebase';
+import firebase from "firebase";
 //import 'firebase/analytics';
 
-
 const config_live = {
-  apiKey: "AIzaSyDAooRf0gULIOoHy4zaxReSfD6UWynnHMI",
-  authDomain: "abelcine-baywatch.firebaseapp.com",
-  databaseURL: "https://abelcine-baywatch.firebaseio.com",
-  projectId: "abelcine-baywatch",
-  storageBucket: "abelcine-baywatch.appspot.com",
-  messagingSenderId: "957294772080",
-  appId: "1:957294772080:web:10478c86ab4bb2925259b5",
-  measurementId: "G-RPNTVGL9FV"
+  apiKey: "AIzaSyB4heeT6uq_kxW1PFiwmDv4n_3lrcgj_vk",
+  authDomain: "baywatch-development.firebaseapp.com",
+  databaseURL: "https://baywatch-development-default-rtdb.firebaseio.com",
+  projectId: "baywatch-development",
+  storageBucket: "baywatch-development.appspot.com",
+  messagingSenderId: "1092065407332",
+  appId: "1:1092065407332:web:cb82ff923dd6310de74a71",
+  measurementId: "G-DCEVQ1ZYS3",
 };
 
 const config_staging = {
-  apiKey: "AIzaSyDAooRf0gULIOoHy4zaxReSfD6UWynnHMI",
-  authDomain: "abelcine-baywatch.firebaseapp.com",
-  databaseURL: "https://abelcine-baywatch.firebaseio.com",
-  projectId: "abelcine-baywatch",
-  storageBucket: "abelcine-baywatch.appspot.com",
-  messagingSenderId: "957294772080",
-  appId: "1:957294772080:web:c6b8e8c6dd573b1f5259b5",
-  measurementId: "G-MLBV6S7SX8"
+  apiKey: "AIzaSyB4heeT6uq_kxW1PFiwmDv4n_3lrcgj_vk",
+  authDomain: "baywatch-development.firebaseapp.com",
+  databaseURL: "https://baywatch-development-default-rtdb.firebaseio.com",
+  projectId: "baywatch-development",
+  storageBucket: "baywatch-development.appspot.com",
+  messagingSenderId: "1092065407332",
+  appId: "1:1092065407332:web:cb82ff923dd6310de74a71",
+  measurementId: "G-DCEVQ1ZYS3",
 };
 
 // DISABLED 08/05/20 - AT - Old config
