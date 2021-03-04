@@ -1,4 +1,4 @@
-//This is a client display page. This will run on a Rental's plasma in the Rental Loby and will just rotate names or present productions.
+//This is a client display page. This will run on a Rental's plasma in the Rental lobby and will just rotate names or present productions.
 import React from "react";
 //import components
 import ClientDispHeader from "../components/ClientDispHeader";
