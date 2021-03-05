@@ -2,12 +2,14 @@
 import React from "react";
 import styled from "styled-components";
 //import components
-import ClientDispHeader from "../components/ClientDispComponent";
+import ClientDispComponent from "../components/ClientDispComponent";
 
 const ClientDisplayPage = () => {
+  const clientsPresent = ["Netflix", "Golden Globe Awards", "SNL"];
+
   return (
     <div>
-      <ClientDispHeader />
+      <ClientDispComponent dispArray={clientsPresent} />
     </div>
   );
 };

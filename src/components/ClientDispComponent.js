@@ -1,16 +1,21 @@
 //this is part of ClientDisplayPage.js
 import React from "react";
 import styled from "styled-components";
+import Logo from "../images/Abel_logo.png";
 
-const ClientDispHeader = () => {
+const ClientDispHeader = (props) => {
   return (
     <Container>
       <Header>
-        <h1>Abel Logo Will Go Here</h1>
+        <img src={Logo} alt="Logo" class="logo" />
       </Header>
       <Line></Line>
       <Main>
-        <h1>Main Content Goes Here</h1>
+        <ul>
+          {props.dispArray.map((client) => (
+            <li>{client}</li>
+          ))}
+        </ul>
       </Main>
       <Line></Line>
       <Footer>
@@ -38,7 +43,12 @@ const Header = styled.div`
 `;
 const Main = styled.div`
   display: flex;
-  height: 60vh;
+  height: 50vh;
+  text-align: center;
+  h1 {
+    font-size: 9rem;
+    font-family: "Faster One", cursive;
+  }
   //  border: 2px solid red;
 `;
 const Footer = styled.div`
