@@ -25,16 +25,16 @@ button:focus {
 }
 
 @font-face {
-  font-family: 'FranklinITCStd-Medium';
-  src: url(./fonts/FranklinITCStd-Medium.otf) format('otf');
+  font-family: "FranklinITCStd-Medium";
+  src: url(./fonts/FranklinITCStd-Medium.otf) format("otf");
 }
 
 body {
-  font-family: 'FranklinITCStd-Medium';
+  font-family: "FranklinITCStd-Medium";
 }
 
 hr {
-  border: .1em solid gray;
+  border: 0.1em solid gray;
 }
 
 /*********************** 
@@ -56,8 +56,8 @@ hr {
 }
 
 .singleBay {
-  border: .1px solid gray;
-  padding: .3em;
+  border: 0.1px solid gray;
+  padding: 0.3em;
   min-width: 9vw;
   max-width: 9vw;
   min-height: 40vh;
@@ -71,7 +71,7 @@ hr {
   display: flex;
   justify-content: space-around;
   font-weight: 700;
-  border-bottom: .1px solid gray;
+  border-bottom: 0.1px solid gray;
   align-items: center;
 }
 .singleBay_header a {
@@ -84,16 +84,15 @@ hr {
   color: blue;
 }
 
-
 .singleBay_jobName {
-  padding: .4em .2em;
+  padding: 0.4em 0.2em;
   font-weight: 900;
   font-size: 1.2em;
 }
 
 .baywatchlogo {
   width: 160px;
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .qrCode {
@@ -104,10 +103,10 @@ hr {
       BAY NOTES 
 ***********************/
 
-body { 
+body {
   background-color: black;
   color: white;
-  font-family: 'FranklinITCStd-Medium', sans-serif;
+  font-family: "FranklinITCStd-Medium", sans-serif;
 }
 
 .header {
@@ -132,11 +131,11 @@ body {
 
 .addItemButton {
   font-size: 1.2em;
-    padding: .2em .2em;
-    color: white;
-    height: 40px;
-    width: 40px;
-    margin-left: -97px;
+  padding: 0.2em 0.2em;
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-left: -97px;
 }
 
 .bayItemList {
@@ -152,7 +151,7 @@ body {
 
   background-color: black;
   color: black;
-  padding: .4em;
+  padding: 0.4em;
 }
 
 .bayItemsName {
@@ -168,7 +167,7 @@ body {
 
 .itemInput {
   font-size: 1.2em;
-  padding: .2em .2em;
+  padding: 0.2em 0.2em;
   width: 93%;
   border-radius: 16px;
 }
@@ -180,7 +179,7 @@ body {
 }
 
 .plusicon {
-  padding: 0 .3em 0 0;
+  padding: 0 0.3em 0 0;
 }
 
 .timeicon {
@@ -192,7 +191,7 @@ body {
 }
 
 .starred {
-  padding: 0 .4em 0 0;
+  padding: 0 0.4em 0 0;
 }
 
 .instructions {
@@ -200,7 +199,7 @@ body {
 }
 
 .itemicon {
-  padding: 0em .2em;
+  padding: 0em 0.2em;
 }
 
 .greenyellow {
@@ -230,15 +229,15 @@ body {
 
 .suggestedItems {
   position: absolute;
-    background-color: white;
-    width: 38em;
-    height: 14em;
-    overflow: scroll;
-    padding: 1em .5em;
-    color: black;
-    right: 32em;
-    font-size: 1.2em;
-    top: 3.5em;
+  background-color: white;
+  width: 38em;
+  height: 14em;
+  overflow: scroll;
+  padding: 1em 0.5em;
+  color: black;
+  right: 32em;
+  font-size: 1.2em;
+  top: 3.5em;
 }
 
 .menu {
@@ -247,15 +246,15 @@ body {
   width: 14%;
   left: 16px;
   top: 4.2em;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .menuItem {
-  padding: .6em 0;
+  padding: 0.6em 0;
 }
 
 .suggestionsTitle {
-  padding: 0 0 .5em 0;
+  padding: 0 0 0.5em 0;
   font-size: 1.2em;
 }
 
@@ -267,8 +266,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;  /* remove scrollbar space */
-  background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
 }
 
 .navIcons {
@@ -281,14 +280,14 @@ body {
 }
 
 .navIcon_item {
-    text-align: center;
-    font-size: 1.5em;
-    padding: 1em 1em;
-    background: #d93f47;
-    border-radius: 50%;
-    width: 18px;
-    color: white;
-    margin-bottom: .5em;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 1em 1em;
+  background: #d93f47;
+  border-radius: 50%;
+  width: 18px;
+  color: white;
+  margin-bottom: 0.5em;
 }
 
 .information {
@@ -305,6 +304,10 @@ body {
 
 .expendables {
   background-color: #2fc22e;
+}
+
+.logo {
+  width: 400px;
 }
 
 /* .teardrop::before {
@@ -334,7 +337,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 640px)  {
+@media screen and (min-width: 640px) {
   .bayItemsName {
     font-size: 1.5em;
   }
@@ -358,8 +361,9 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-  .information, .expendables, .addItem {
+  .information,
+  .expendables,
+  .addItem {
     display: none;
   }
 }
-
