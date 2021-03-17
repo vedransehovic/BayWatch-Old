@@ -13,11 +13,6 @@ const ClientDispHeader = (props) => {
       </Header>
       <Line></Line>
       <Main>
-        <ul>
-          {props.dispArray.map((element) => (
-            <li>{element}</li>
-          ))}
-        </ul>
         <div>
           <h1>{client}</h1>
         </div>
