@@ -1,9 +1,11 @@
 //this is part of ClientDisplayPage.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../images/Abel_logo.png";
 
 const ClientDispHeader = (props) => {
+  const [client, setClient] = useState("client");
+
   return (
     <Container>
       <Header>
@@ -12,10 +14,13 @@ const ClientDispHeader = (props) => {
       <Line></Line>
       <Main>
         <ul>
-          {props.dispArray.map((client) => (
-            <li>{client}</li>
+          {props.dispArray.map((element) => (
+            <li>{element}</li>
           ))}
         </ul>
+        <div>
+          <h1>{client}</h1>
+        </div>
       </Main>
       <Line></Line>
       <Footer>
@@ -48,6 +53,7 @@ const Main = styled.div`
   h1 {
     font-size: 9rem;
     font-family: "Faster One", cursive;
+    color: yellow;
   }
   //  border: 2px solid red;
 `;
