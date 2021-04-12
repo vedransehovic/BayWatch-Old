@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../images/Abel_logo.png";
+//components
+import ClientDisp from "../components/ClientDispComponent";
 
 const ClientDispHeader = () => {
-  const [client, setClient] = useState("client");
+  //fake array
+  const clientList = ["Arri", "CinemaVision", "Atari"];
 
   return (
     <Container>
@@ -13,9 +16,7 @@ const ClientDispHeader = () => {
       </Header>
       <Line></Line>
       <Main>
-        <div>
-          <h1>{client}</h1>
-        </div>
+        <ClientDisp clientList={clientList} />
       </Main>
       <Line></Line>
       <Footer>
